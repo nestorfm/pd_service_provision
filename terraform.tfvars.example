@@ -1,0 +1,32 @@
+# terraform.tfvars.example
+pagerduty_token = "your-pagerduty-api-token-here"
+
+business_service_name        = "Production Business Service"
+business_service_description = "Main production business service"
+
+technical_services = [
+  {
+    name                    = "Web Application"
+    description             = "Frontend web application service"
+    escalation_policy_name  = "Default"
+    alert_creation          = "create_alerts_and_incidents"
+    acknowledgement_timeout = 600
+    auto_resolve_timeout    = 14400
+  },
+  {
+    name                    = "API Gateway"
+    description             = "API gateway service"
+    escalation_policy_name  = "Default"
+    alert_creation          = "create_alerts_and_incidents"
+    acknowledgement_timeout = 600
+    auto_resolve_timeout    = 14400
+  },
+  {
+    name                    = "Database Cluster"
+    description             = "PostgreSQL database cluster"
+    escalation_policy_name  = "Default"
+    alert_creation          = "create_alerts_and_incidents"
+    acknowledgement_timeout = 900
+    auto_resolve_timeout    = 21600
+  }
+]

@@ -1,0 +1,13 @@
+# services.tftpl
+%{ for idx, service in services ~}
+Technical Service ${idx + 1}:
+  Name: ${service.name}
+  Description: ${service.description}
+  Escalation Policy: ${service.escalation_policy_name}
+  Alert Creation: ${service.alert_creation}
+  Acknowledgement Timeout: ${service.acknowledgement_timeout}s
+  Auto Resolve Timeout: ${service.auto_resolve_timeout}s
+  
+%{ endfor ~}
+Business Service: ${business_service_name}
+Total Technical Services: ${length(services)}
